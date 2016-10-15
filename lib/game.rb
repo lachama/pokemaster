@@ -14,7 +14,7 @@ def jugar numero
 	jugada << numero[2]
 	jugada << numero[3]
 	jugada << contarFijas(jugada)
-	jugada << "0"
+	jugada << contarPicas(jugada)
 	@jugadas << jugada
 end
 
@@ -31,5 +31,18 @@ end
 			end
 		end
 		return fijas.to_s
+	end
+
+	def contarPicas jugada
+		picas = 0
+		(0..3).each do |indexMagico|
+			(0..3).each do |indexGuess|
+				if @numeromagico[indexMagico] == jugada[indexGuess]
+				   picas = picas + 1
+				end
+			end
+		end
+		picas = picas - jugada[4].to_i
+		return picas.to_s
 	end
 end

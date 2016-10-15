@@ -13,14 +13,16 @@ describe Game do
     	#act
     	jugadas = @game.getJugadas
     	#assert
-    	expect(jugadas).to eq Array[["2","3","4","5", "0", "0"], ["3","4","5","6","0", "0"]] 
+    	expect(jugadas).to eq Array[["2","3","4","5", "0", "3"], ["3","4","5","6","0", "2"]] 
     end
 
     it "cuenta las picas" do
-    	#arrange 
-    	@game.jugar ""
+    	#arrange
+    	@game.jugar "2546"
     	#act
+    	jugada = @game.getJugadas[0]
     	#assert
+    	expect(jugada[5]).to eq "2"
     end
 
     it "cuenta las fijas" do
