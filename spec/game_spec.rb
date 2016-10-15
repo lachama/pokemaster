@@ -1,14 +1,19 @@
 require './lib/game'
 
-describe 'Validador del juego' do 
+describe Game do 
 
-    it 'valida las fijas' do
+	before do
+		@game = Game.new "1234"
+	end
+
+    it "muestra jugadas realizadas" do
     	#arrange
-    	validator = Gamevalidator.new "1234"
+    	@game.jugar "2345"
+    	@game.jugar "3456"
     	#act
-    	fijas = validator.validarFijas "5264"
+    	jugadas = @game.getJugadas
     	#assert
-    	expect(fijas).to eq 2
+    	expect(jugadas).to eq Array["2345", "3456"] 
     end
 	
 end
