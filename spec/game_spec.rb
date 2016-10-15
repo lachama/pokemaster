@@ -13,7 +13,12 @@ describe Game do
     	#act
     	jugadas = @game.getJugadas
     	#assert
-    	expect(jugadas).to eq Array["2345", "3456"] 
+    	expect(jugadas).to eq Array[["2","3","4","5"], ["3","4","5","6"]] 
+    end
+
+    it "inicia partida" do
+    	#arrange
+    	#@game.iniciar
     end
 	
 end

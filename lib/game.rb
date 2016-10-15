@@ -14,7 +14,13 @@ end
 #	end
 
 def jugar numero
-	@jugadas << numero
+	jugada = Array.new
+	jugada << numero[0]
+	jugada << numero[1]
+	jugada << numero[2]
+	jugada << numero[3]
+	@jugadas << jugada
+
 end
 
 def getJugadas
