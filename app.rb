@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'better_errors'
+require './lib/game.rb'
 
 configure :development do
   use BetterErrors::Middleware
@@ -13,6 +14,14 @@ get '/' do
 	erb :index
 end
 
-post '/jugada' do
+get '/iniciar' do 
+	session["game"] = Game.new "1234"
+	session['jugadasAnteriores'] = session["game"].getJugadas
+ 	erb :jugada
+end
+
+post '/jugada' do 
+	session["game"].jugar params['jugada']
+	session['jugadasAnteriores'] = session["game"].getJugadas
  	erb :jugada
 end

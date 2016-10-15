@@ -30,12 +30,13 @@ end
 
 When(/^ingreso la jugada "([^"]*)"$/) do |val1|
  	fill_in('numeroJugada', :with => val1)
+ 	click_button('enviarJugada')
 end
 
 
 Then(/^veo "([^"]*)", "([^"]*)", "([^"]*)", "([^"]*)" en las jugadas anteriores$/) do |val1, val2, val3, val4|
-  	expect(find('#number1').text).to eq val1
-  	expect(find('#number2').text).to eq val2
-  	expect(find('#number3').text).to eq val3
- 	expect(find('#number4').text).to eq val4
+  	 expect(find('#number0_row0').text).to eq val1
+  	expect(find('#number1_row0').text).to eq val2
+  	expect(find('#number2_row0').text).to eq val3
+ 	expect(find('#number3_row0').text).to eq val4
 end

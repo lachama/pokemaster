@@ -12,53 +12,39 @@
 </head>
 <body>
 	<h1 id="jugada" class="center">Realizar jugadas</h1>
+	
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
 
-	<table class="table table-striped">
-		<tr>
-			<th>#</th>
-			<th id="number1">1</th>
-			<th id="number2">2</th>
-			<th id="number3">3</th>
-			<th id="number4">4</th>
-			<th>PICAS</th>
-			<th>FIJAS</th>
-		</tr>
-		<tr>
-			<td></td>
-			<td>1</td>
-			<td>2</td>
-			<td>3</td>
-			<td>4</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
-	<hr>
-	<form class="form-inline">
-	<div class="form-group">
-		 <label for="jugada">Jugada</label>
-		<input type="text" name="jugada" id="numeroJugada" class="form-control"> 
-		<input type="submit" value="Jugar!" class="btn btn-default">
+
+			<table class="table table-striped">
+				<tr>
+					<th>#</th>
+					<th>Number 1</th>
+					<th>Number 2</th>
+					<th>Number 3</th>
+					<th>Number 4</th>
+					<th>PICAS</th>
+					<th>FIJAS</th>
+				</tr>
+				<% session['jugadasAnteriores'].each_with_index do |item, index|%>
+					<tr>
+						<td><%= index %></td>
+						<% item.each_with_index do |val, id| %>
+							<td id="number<%= id %>_row<%= index %>"><%= val %></td>
+						<% end %>
+					</tr>
+				<% end %>
+			</table>
+			<hr>
+			<form action="/jugada" method="POST" class="form-inline">
+				<div class="form-group">
+					 <label for="jugada">Jugada</label>
+					<input type="text" name="jugada" id="numeroJugada" class="form-control"> 
+					<input type="submit" value="Jugar!" class="btn btn-default" id="enviarJugada">
+				</div>
+			</form>
+		</div>
 	</div>
-		
-	</form>
 </body>
 </html>

@@ -8,12 +8,15 @@
 		.center{
 			text-align: center;
 		}
+		.margin-top{
+			margin-top: 100px;
+		}
 	</style>
 </head>
 <body>
 <h1 id="titulo" class="center">Bienvenido al POKEMASTER</h1>
-	<form action="/jugada" method="POST">
-		<input type="submit" name="inicioBtn" value="Iniciar" id="inicioBtn" class="btn btn-default center">
+	<form action="/iniciar" method="get">
+		<input type="submit" name="inicioBtn" value="Iniciar" id="inicioBtn" class="btn btn-lg btn-success center-block margin-top">
 	</form>
 </body>
 </html>
