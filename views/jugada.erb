@@ -2,24 +2,18 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- 	<link  rel="stylesheet" type="text/css" href="../css/styles.css"></link> -->
 	<style type="text/css">
-		table{
-			width: 100%;
-		}
-
-		tr{
-			width: 100%;
-		}
-		tr td{
-			width: 100px;
-			height: 50px;
+		.center{
+			text-align: center;
 		}
 	</style>
 </head>
 <body>
-	<h1 id="jugada">Realizar jugadas</h1>
+	<h1 id="jugada" class="center">Realizar jugadas</h1>
 
-	<table border="1">
+	<table class="table table-striped">
 		<tr>
 			<th>#</th>
 			<th>1</th>
@@ -31,10 +25,10 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -58,8 +52,13 @@
 		</tr>
 	</table>
 	<hr>
-	<form>
-		<label for="jugada">Jugada</label><input type="text" name="jugada"> <input type="submit" value="Jugar!">
+	<form class="form-inline">
+	<div class="form-group">
+		 <label for="jugada">Jugada</label>
+		<input type="text" name="jugada" id="numeroJugada" class="form-control"> 
+		<input type="submit" value="Jugar!" class="btn btn-default">
+	</div>
+		
 	</form>
 </body>
 </html>
