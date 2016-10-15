@@ -18,6 +18,7 @@ Then(/^la partida comienza$/) do
 	 expect(find('#jugada').text).to eq 'Realizar jugadas'
 end
 
+<<<<<<< HEAD
 
 Then(/^veo (\d+) fijas en los resultados$/) do |arg1|
    expect(find('#fijas'))
