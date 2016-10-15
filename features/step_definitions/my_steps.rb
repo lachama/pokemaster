@@ -18,17 +18,17 @@ Then(/^la partida comienza$/) do
 	 expect(find('#jugada').text).to eq 'Realizar jugadas'
 end
 
-#US Realizar Jugada
-Given(/^que he iniciado la partida$/) do
-  visit '/'
-  click_button('inicioBtn')
-end
+# #US Realizar Jugada
+# Given(/^que he iniciado la partida$/) do
+#   visit '/'
+#   click_button('inicioBtn')
+# end
 
-When(/^ingreso la jugada "([^"]*)"$/) do |value|
- 	fill_in('numeroJugada', :with => value)
-end
+# When(/^ingreso la jugada "([^"]*)"$/) do |value|
+#  	fill_in('numeroJugada', :with => value)
+# end
 
-Then(/^veo "([^"]*)" en las jugadas anteriores$/) do |texto|
-	find('td', text: texto).should have_content(texto)
-end
+# Then(/^veo "([^"]*)" en las jugadas anteriores$/) do |texto|
+# 	find('td', text: texto).should have_content(texto)
+# end
 
