@@ -2,10 +2,18 @@ Given(/^que abri la aplicacion$/) do
   visit '/'
 end
 
-Then(/^debo ver el campo de ingreso de la jugada$/) do
-   expect(find('#inicioBtn'))
+#Scenario 1
+
+Then(/^debo ver el titulo de bienvenida "([^"]*)"$/) do |arg1|
+  expect(page.body).to match /#{text}/m
 end
 
-Then(/^la tabla de jugadas previas en blanco$/) do
-  expect(find('#jugadasPrevias'))
+#Scenario 2
+
+When(/^inicio la partida$/) do
+   click_button('inicioBtn')
+end
+
+Then(/^la partida comienza$/) do
+	 expect(find('#jugada').text).to eq 'Realizar jugadas'
 end

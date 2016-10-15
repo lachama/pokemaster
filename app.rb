@@ -12,3 +12,7 @@ set :session_secret, 'thisIsAKleerSecret'
 get '/' do
 	erb :index
 end
+
+post '/jugada' do
+ 	erb :jugada
+end
